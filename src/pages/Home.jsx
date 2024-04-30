@@ -1,10 +1,10 @@
 // import Form from "../components/Form";
 
-const Home = () => {
+const Home = ({ apiKey }) => {
     return (
         <div>
             <h1>Welcome to CaddieAI!</h1>
-            {/* <Form /> */}
+            {/* <Form apiKey={apiKey} /> */}
         </div>
     );
 };

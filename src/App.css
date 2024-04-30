@@ -1,0 +1,42 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* App */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #44a789;
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+.header-name {
+  margin-left: 20px;
+}
+
+.header-buttons {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.content {
+  margin-top: 10%;
+  padding: 20px;
+}
+
+.header-button {
+  margin: 0 10px;
+  color: #fff;
+  cursor: pointer;
+}
