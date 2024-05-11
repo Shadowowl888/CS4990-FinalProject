@@ -4,8 +4,6 @@ import Caddie from "./pages/Caddie";
 import "./App.css";
 
 const App = () => {
-  // const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
-
   let element = useRoutes([
     {
       path: "/",
