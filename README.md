@@ -29,7 +29,6 @@ Here's a walkthrough of implemented user stories:
 <!-- <img src='https://youtu.be/_NJ4BxcS1TY' title='Video Walkthrough' width='' alt='Video Walkthrough' /> -->
 
 [![Video walkthrough](https://img.youtube.com/vi/_NJ4BxcS1TY/0.jpg)](https://www.youtube.com/watch?v=_NJ4BxcS1TY)
-[<img src="https://img.youtube.com/vi/_NJ4BxcS1TY/0.jpg" width="50%">](https://www.youtube.com/watch?v=_NJ4BxcS1TY)
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with [LICEcap](https://www.cockos.com/licecap/)
