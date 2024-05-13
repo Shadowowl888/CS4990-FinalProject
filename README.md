@@ -2,7 +2,7 @@
 
 Submitted by: **Devin Khun**
 
-This web app: **insert description**
+This web app: **CaddieAI is my CS4990 Prompt Engineering Final Project. It uses the OpenAI API to generate content based on the user's data and system prompt pattern to create a JSON of golf tips to be kept track as if the user were playing with a Caddie.**
 
 Time spent: **10** hours spent in total
 
@@ -26,9 +26,10 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://youtu.be/_NJ4BxcS1TY' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-https://youtu.be/_NJ4BxcS1TY
+<!-- <img src='https://youtu.be/_NJ4BxcS1TY' title='Video Walkthrough' width='' alt='Video Walkthrough' /> -->
+
 [![Video walkthrough](https://img.youtube.com/vi/_NJ4BxcS1TY/0.jpg)](https://www.youtube.com/watch?v=_NJ4BxcS1TY)
+[<img src="https://img.youtube.com/vi/_NJ4BxcS1TY/0.jpg" width="50%">](https://www.youtube.com/watch?v=_NJ4BxcS1TY)
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with [LICEcap](https://www.cockos.com/licecap/)
