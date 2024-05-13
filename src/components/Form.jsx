@@ -3,7 +3,7 @@ import OpenAI from "openai";
 
 const Form = () => {
     const [post, setPost] = useState({hole: 0, par: 0, yardage: 0, wind: "", extras: ""});
-    const [apiResponse, setApiResponse] = useState("");
+    const [apiResponse, setApiResponse] = useState({});
 
     // const configuration = new Configuration({
     //     apiKey: import.meta.env.VITE_OPENAI_API_KEY
@@ -24,9 +24,9 @@ const Form = () => {
         e.preventDefault();
         const userInput = `Geneate a golf plan for the designated hole. I am playing hole ${post.hole} with a par of ${post.par}, a yardage distance of ${post.yardage} and ${post.wind} wind speed and direction. ${post.extras ? "Here is some specific details regarding the hole that may be important " + post.extras + "." : ""} I want to take at least par on the hole so provide advice by taking the maximum number of strokes to receive a par. Display the title of the response with the hole number and par with the distnace. For each shot up to par, have a brief plan of action and specific clubs to use. Output the response with the following valid JSON format with these default values: {hole: 0, par: 0, yardage: 0, wind: '', strokes: {1: '', 2: '', 3: ''}}. For the strokes JSON, it is based on how many strokes is needed for the recommended hole and the following advice for that corresponding stroke will be placed as a string. Please do not provide any parenthesis strings around the key name in the JSON.`;
         // const userInput = `Generate a golf plan for the designated hole. I am playing hole ${post.hole} with a par of ${post.par}, a yardage distance of ${post.yardage} and ${post.wind} wind speed and direction. I want to take at least par on the hole so provide advice by taking the maximum number of strokes to receive a par. Display the title of the response with the hole number and par with the distnace. For each shot up to par, have a brief plan of action and specific clubs to use. Output the information will a title containing "Hole {hole_number} Par {par} - {yardage} yards". Remove the word "Title" in the response. Underneath label each stroke with club choice and the detailed plan of action. Don't output anything after that.`;
-        try {<s></s>
+        try {
             const response = await openai.chat.completions.create({
-                model: "gpt-4",
+                model: "gpt-4-1106-preview",
                 messages: [
                     {
                         role: "system",
@@ -37,6 +37,7 @@ const Form = () => {
                         content: userInput,
                     }
                 ],
+                response_format: {"type": "json_object"},
                 temperature: 1,
                 max_tokens: 2048,
                 top_p: 1,
@@ -47,7 +48,7 @@ const Form = () => {
             console.log(apiResponse);
         } catch (e) {
             console.log("Something is going wrong, Please try again.", e);
-            setApiResponse({"hole": 18, "par": 0, "yardage": 0, "wind": "", "strokes": {"1": ""}});
+            setApiResponse({"hole": 1, "par": 0, "yardage": 0, "wind": "", "strokes": {"1": ""}});
         }
     };
 
@@ -100,11 +101,17 @@ const Form = () => {
                     </button>
                 </form>
             </div>
-
-            {/* {apiResponse && Object.keys(apiResponse).length > 0 && (
-                <p>{apiResponse}</p>
-            )} */}
-            <p className="response">{apiResponse}</p>
+            
+            {apiResponse && Object.keys(apiResponse).length > 0 && (
+                <div>
+                    <p>{apiResponse}</p>
+                    <h2>Hole {apiResponse.hole} Par {apiResponse.par} - {apiResponse.yardage} yards</h2>
+                    <h3>Strokes</h3>
+                    <ul>
+                        <li>{apiResponse.strokes}</li>
+                    </ul>
+                </div>
+            )}
         </div>
     );
 };

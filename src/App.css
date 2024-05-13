@@ -41,6 +41,11 @@
   cursor: pointer;
 }
 
+
+h1 {
+  margin-bottom: 100px;
+}
+
 /* Form */
 .container {
   display: flex;
